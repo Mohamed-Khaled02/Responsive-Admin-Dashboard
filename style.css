@@ -1,0 +1,594 @@
+/* set variables */
+:root {
+    /* colors */
+    --color-primary: #7380ec;
+    --color-danger: #ff7782;
+    --color-success: #41f1b6;
+    --color-warning: #ffbb55;
+    --color-light: rgba(132, 139, 200, .18);
+    --box-shadow: 0 2rem 3rem var(--color-light);
+    --color-background: #f6f6f9;
+    --color-white:#fff;
+    --color-dark: #363949;
+    ----color-dark-variant: #677483;
+}
+    /* dark theme variables */
+.dark-theme-variables {
+    --color-background: #181a1e;
+    --color-white: #202528;
+    --color-dark: #edeffd;
+    ----color-dark-variant: #a3bdcc;
+    --color-light: rgba(0, 0, 0, 0.4);
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+/* end variables */
+/* --------start global vales------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+body {
+    height: 100vh;
+    width: 100vh;
+    overflow-x: hidden;
+    font-family: "poppins";
+    background-color: var(--color-background);
+    font-size: .88rem;
+    user-select: none;
+    color: var(--color-dark);
+}
+a {
+    color: var(--color-dark);
+    text-decoration: none;
+}
+img {
+    display: block;
+    width: 100%;
+}
+h1 {
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+h2 {
+    font-size: 1.4rem;
+}
+h3 {
+    font-size: 0.87;
+}
+h4 {
+    font-size: .8rem;
+}
+h5 {
+    font-size: 0.77rem;
+}
+p {
+    color: var(----color-dark-variant);
+}
+small {
+    font-size: 0.75rem;
+}
+b {
+    color: var(--color-dark);
+}
+.container {
+    display: grid;
+    width: 96%;
+    margin: 0 auto;
+    gap: 1.8rem;
+    grid-template-columns: 14rem auto 23rem;
+}
+.profile-photo {
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    overflow-x: hidden;
+}
+.text-muted {
+    color: #7d8da1;
+}
+.primary {
+    color: var(--color-primary);
+}
+.danger {
+    color: var(--color-danger);
+}
+.success {
+    color: var(--color-success);
+}
+.warning {
+    color: var(--color-warning);
+}
+/* --------end global vales------- */
+/* -----------------start the aside--------------- */
+aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 1.4rem;
+    align-items: center;
+    width: 100%;
+}
+
+aside  .top {
+    display: flex;
+    gap: .8rem;
+    align-items: center;
+}
+aside .top img {
+    width: 2rem;
+    height: 2rem;
+}
+aside .top .button {
+    cursor: pointer;
+    width: 0rem;
+}
+aside .top .close {
+    display: none;
+}
+/* sidebar */
+aside .sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    top: 3rem;
+    width: 100%;
+}
+aside .sidebar a {
+    display: flex;
+    align-items: center;
+    color: #7d8da1;
+    gap: 1rem;
+    position: relative;
+    height: 3rem;
+    margin-left: 2rem;
+    transition: all .3s ease;
+}
+aside .sidebar a:last-child {
+    position: absolute;
+    bottom: 15rem;
+    width: 100%;
+}
+aside .sidebar a h3 {
+    font-weight: 500;
+}
+aside .sidebar .span {
+    transition: all .3s ease;
+}
+aside .sidebar .message-count {
+    color: var(--color-white);
+    background-color: var(--color-danger);
+    padding: 2px 10px;
+    border-radius: .4rem;
+    font-size: 11px;
+}
+aside .sidebar .active {
+    background-color: var(--color-light);
+    color: var(--color-primary);
+    margin-left: 0;
+}
+aside .sidebar .active::before {
+    content: "";
+    width: 6px;
+    height: 100%;
+    background-color: var(--color-primary);
+}
+aside .sidebar a:hover {
+    color: var(--color-primary);
+}
+aside .sidebar a:hover .span {
+    margin-left: 1rem;
+}
+/* sidebar */
+/* -----------------end the aside--------------- */
+/* --------------start main--------- */
+main {
+    margin-top: 1rem;
+}
+main .date {
+    background-color: var(--color-light);
+    padding: 1rem 2rem;
+    border-radius: .4rem;
+    margin-top: 1rem;
+    width: 250px;
+}
+main .date input {
+    background: transparent;
+    border: 0;
+    color: #7d8da1;
+    font-size: 20px;
+}
+main .insights {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1rem;
+}
+main .insights > div {
+    margin-top: 1rem;
+    background-color: var(--color-white);
+    padding: 1.8rem;
+    border-radius: 2rem;
+    box-shadow: var(--box-shadow);
+    transition: all .3s ease;
+}
+main .insights > div:hover {
+    box-shadow: none;
+}
+main .insights > div .span {
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    padding: 0.5rem;
+    font-size: 2rem;
+}
+main .insights .expenses .span {
+    background-color: var(--color-danger);
+}
+main .insights .income .span {
+    background-color: var(--color-warning);
+}
+main .insights > div .middle {
+    display:flex;
+    justify-content: space-between !important;
+    align-items: center;
+}
+main .insights  h2 {
+    font-size: 14px;
+    margin: 1rem 0 0.6rem;
+}
+main .insights > div .progress {
+    position: relative;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+}
+main .insights > div .middle svg {
+    width: 7rem;
+    height: 7rem;
+    margin-left: 1rem;
+}
+main .insights  svg circle {
+    fill: none;
+    stroke: var(--color-primary);
+    stroke-width: 14;
+    stroke-linecap: round;
+    transform: translate(5px, 5px);
+    stroke-dasharray: 110;
+    stroke-dashoffset: 92;
+}
+main .insights .sales svg circle {
+    stroke-dashoffset: -30;
+    stroke-dasharray: 200;
+}
+main .insights .expenses svg circle {
+    stroke-dashoffset: 20;
+    stroke-dasharray: 80;
+}
+main .insights .expenses svg circle {
+    stroke-dashoffset: 35;
+    stroke-dasharray: 110;
+}
+main .insights > div .number {
+    position: absolute;
+    top: 0;
+    left: 13px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+main .insights .text-muted {
+    margin-top: 1.6rem;
+    display: block;
+}
+/* --end of insights-- */
+/* start table */
+main .recent-orders{
+    margin-top: 2rem;
+}
+main .recent-orders h2 {
+    margin-bottom: 0.8rem;
+}
+main .recent-orders table {
+    width: 100%;
+    text-align: center;
+    background-color: var(--color-white);
+    box-shadow: var(--box-shadow);
+    border-radius: 2rem;
+    transition: all .3s ease;
+}
+main .recent-orders table:hover {
+    box-shadow: none;
+}
+main .recent-orders table td {
+    height: 2rem;
+    border-bottom: 1px solid var(--color-light);
+}
+main .recent-orders table tr:last-child td {
+    border-bottom: 0;
+}
+main .recent-orders a {
+    color: var(--color-primary);
+    display: block;
+    margin: 1rem;
+    text-align: center;
+}
+/* end table */
+/* --------------end main--------- */
+/*---------- start right sidebar ----------*/
+.right-sidebar {
+    margin-top: 2rem;
+    margin-right: 0; 
+}
+.right-sidebar .top {
+    display: flex;
+    justify-content: end;
+}
+.right-sidebar .top .button {
+    display: none;
+}
+.right-sidebar .top .theme-toggler {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-light);
+    height: 1.6rem;
+    width: 4.2rem;
+    cursor: pointer;
+    border-radius: 0.4rem;
+    margin-right: 1rem;
+}
+.right-sidebar .top .theme-toggler .span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    font-size: 1.2rem;
+}
+.right-sidebar .top .theme-toggler .active {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-radius: 0.4rem;
+    height: 100%;
+}
+.right-sidebar .top .profile {
+    display: flex;
+    gap: 2rem;
+    text-align: right;
+}
+.right-sidebar .recent-updates {
+    margin-top: 1rem;
+}
+.right-sidebar .recent-updates .updates {
+    margin-top: 1rem;
+    background-color: var(--color-white);
+    border-radius: 2rem;
+    padding: 1rem 2rem;
+    box-shadow: var(--box-shadow);
+    transition: all .3s ease;
+}
+.right-sidebar .recent-updates .updates:hover {
+    box-shadow: none;
+}
+.right-sidebar .recent-updates .updates .update {
+    display: grid;
+    grid-template-columns: 2.6rem auto;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+/* -----end recent updates------ */
+/* start sales */
+.sales {
+    margin-top: 2rem; 
+}
+.sales h2 {
+    margin-bottom: 0.8rem;
+}
+.sales .orders {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--color-white);
+    border-radius: 2rem;
+    margin-bottom: 0.7rem ;
+    padding: 1.4rem 1.8rem;
+    box-shadow: var(--box-shadow);
+    transition: all .3s ease;
+}
+.sales .orders:hover {
+    box-shadow: none;
+}
+
+.sales .orders .right {
+    display: flex;
+    align-items: center;
+}
+.sales .orders .right .icon {
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 10px;
+}
+.sales .orders .right .icon-danger {
+    background-color: var(--color-danger);
+}
+.sales .orders .right .icon-success {
+    background-color: var(--color-success);
+}
+/* end of orders */
+.sales .add-btn a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px dashed var(--color-primary);
+    padding: 2rem 0;
+    color: var(--color-primary);
+    gap: .6rem;
+    border-radius: 2rem;
+    transition: all .3s ease;
+    
+}
+
+/* .sales .add-btn a:hover {
+    color: var(--color-primary);
+} */
+/* end sales */
+/*---------- end right sidebar ----------*/
+/* -------------------Media Queries-----------------*/
+/* in medium screens */
+@media screen and (max-width:1200px) {
+    body {
+        width: 100%;
+        overflow-x: hidden !important;
+    }
+    .container {
+        grid-template-columns: 7rem auto 23rem;
+        width: 94%;
+        
+    }
+    aside .top h1 {
+        display: none;
+    }
+    .sidebar h3 {
+        display: none;
+    }
+    aside .sidebar a {
+        width: 5.6rem;
+    }
+    aside .sidebar a:last-child {
+        position: relative;
+        bottom: .3rem;
+    }
+    /*end  sidebar */
+    main .insights{
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    main .recent-orders {
+        width: 94%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 2rem 0 0 8.8rem;
+    }
+    main .recent-orders table {
+        width: 83vw;
+    }
+    main table thead tr th:last-child,
+    main table thead tr th:first-child {
+        display: none;
+    }
+    main table tbody tr td:last-child,
+    main table tbody tr td:first-child {
+        display: none;
+    }
+    /* end main */
+}
+/* in small devices */
+@media screen and (max-width:768px) {
+    .container {
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+    aside {
+        position: fixed;
+        background-color: var(--color-white);
+        left: -100%;
+        box-shadow: var(--box-shadow);
+        z-index: 3;
+        width: 18rem;
+        height: 100% !important;
+        padding: 1.8rem 1.8rem 1.8rem 0;
+        margin-top: 0;
+        display: none;
+        animation: showMenu 400ms ease forwards;
+    }
+    @keyframes showMenu {
+        to {
+            left: 0;
+        }
+    }
+    .show-aside {
+        display: block;
+    }
+    aside .top {
+        margin-left: 1rem;
+    }
+    aside .top h1 {
+        display: inline;
+    }
+    .sidebar h3 {
+        display: inline;
+    }
+    .sidebar a {
+        width: 100% !important;
+        height: 3.4rem;
+    }
+    aside .sidebar a:last-child {
+        position: absolute;
+        bottom: 15rem;
+    }
+    aside .top .close {
+        display: inline-block;
+        margin-left: 50px;
+        font-size: 25px;
+        color: var(--color-primary);
+        cursor: pointer;
+    }
+    /* end side bar  */
+    main {
+        margin-top: 8rem;
+        padding: 0 1rem;
+    }
+    main .recent-orders {
+        position: relative;
+        width: 100%;
+        margin: 1rem 0 0 0;
+    }
+    main .recent-orders table {
+        width: 100%;
+        margin: 0;
+    }
+    /* end main */
+    .right-sidebar {
+        width: 94%;
+        margin: 0 auto 4rem;
+    }
+    .right-sidebar .top {
+        position: fixed;
+        top: 0;
+        left: 0;
+        align-items: center;
+        padding: 0 0.8rem;
+        height: 4.6rem;
+        margin: 0;
+        background-color: var(--color-white);
+        z-index: 2;
+        width: 100%;
+        box-shadow: 0 1rem 1rem var(--color-light);
+    }
+    .right-sidebar .top .theme-toggler {
+        width: 4.4rem;
+        position: absolute;
+        left: 66%;
+    }
+    .right-sidebar .top .info {
+        display: none;
+    }
+    .right-sidebar .top .button {
+        display: inline;
+        background: transparent;
+        font-size: 25px;
+        position: absolute;
+        left: 4%;
+        bottom: 30%;
+        text-align: center;
+        cursor: pointer;
+    }
+}
+
+/* -------------------End Media Queries-----------------*/
